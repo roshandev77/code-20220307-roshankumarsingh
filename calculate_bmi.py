@@ -1,6 +1,7 @@
 from distutils.log import ERROR, debug
 from http.client import OK
 from threading import Thread
+import threading
 import flask
 from flask_cors import CORS
 import json
@@ -19,8 +20,8 @@ def get_bmi():
     sample_return = {}
     global input_data
     try:
-        input_file = open('./person_details.json')
-        input_data = json.load(input_file)
+        # input_file = open('./person_details.json')
+        # input_data = json.load(input_file)
         print(input_data)
         for data in input_data:
             bmi = round(data["WeightKg"] / (float(data["HeightCm"]/100))**2, 2)
@@ -72,16 +73,21 @@ def get_count():
         print(e)
         return ERROR
 
-def startThread():
+
+def open_file():
     global input_data
     try:
         input_file = open('./person_details.json')
         input_data = json.load(input_file)
+        print(input_data)
     except Exception as e:
         print(e)
     return OK_RESPONSE_CODE
 
+@app.before_first_request
+def thread_start():
+    Thread(target=open_file).start()
+
 if __name__ == '__main__':
-    Thread(target=startThread).start()
-    app.run(debug=False)
+    app.run(debug=True, threaded=True)
 
