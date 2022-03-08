@@ -73,8 +73,33 @@ def get_count():
 def instanciate_class():
     global input_data
     try:
-        input_file = open('./person_details.json')
-        input_data = json.load(input_file)
+        # input_file = open('./person_details.json')
+        # input_data = json.load(input_file)
+        input_data = [{
+    "Gender": "Male",
+    "HeightCm": 171,
+    "WeightKg": 96
+}, {
+    "Gender": "Male",
+    "HeightCm": 161,
+    "WeightKg": 85
+}, {
+    "Gender": "Male",
+    "HeightCm": 180,
+    "WeightKg": 77
+}, {
+    "Gender": "Female",
+    "HeightCm": 166,
+    "WeightKg": 62
+}, {
+    "Gender": "Female",
+    "HeightCm": 150,
+    "WeightKg": 70
+}, {
+    "Gender": "Female",
+    "HeightCm": 167,
+    "WeightKg": 82
+}]
     except Exception as e:
         print(e)
     return OK_RESPONSE_CODE
