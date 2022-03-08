@@ -6,6 +6,7 @@
 
 --> The route to calculate the bmi and add the BMI Category and Health Risk as third key in the existing paresd data
      http://127.0.0.1:5000/get-bmi  (for localhost)
+     https://code-bmi.herokuapp.com/get-bmi
      Sample Data:
 
      {
@@ -56,9 +57,14 @@
 
 --> the route to count the Overweight person I can make dynamic as well by making the GET request with params
      http://127.0.0.1:5000/get-count
+
+     https://code-bmi.herokuapp.com/get-count
      Sample Data:
      {"OverweightCount":1}
 
 
-*** Deployed the code as a seprate backend service on heroku **
+*** Deployed the code as a seprate backend service on heroku ***
 
+--> Automatic Build and deployed the code whenever pushed to github repo
+--> As I am using the free service I need to restart the dynos
+--> Automated through the github repo

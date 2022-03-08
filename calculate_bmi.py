@@ -72,7 +72,7 @@ def get_count():
         print(e)
         return ERROR
 
-def instanciate_class():
+def startThread():
     global input_data
     try:
         input_file = open('./person_details.json')
@@ -82,6 +82,6 @@ def instanciate_class():
     return OK_RESPONSE_CODE
 
 if __name__ == '__main__':
-    Thread(target=instanciate_class).start()
+    Thread(target=startThread).start()
     app.run(debug=False)
 
