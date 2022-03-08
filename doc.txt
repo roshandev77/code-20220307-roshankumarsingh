@@ -1,0 +1,64 @@
+--> Added the input data as a file open it processes the data accordingly
+
+--> Implemented the thread that actually open up the file and parse it.
+
+--> Used Flask framework for work on the routes in order to work on the REST API,s
+
+--> The route to calculate the bmi and add the BMI Category and Health Risk as third key in the existing paresd data
+     http://127.0.0.1:5000/get-bmi  (for localhost)
+     Sample Data:
+
+     {
+    "data": [{
+        "BMI Category": "Moderately obese",
+        "Gender": "Male",
+        "Health risk": "Medium risk",
+        "HeightCm": 171,
+        "WeightKg": 96,
+        "bmi": 32.83
+    }, {
+        "BMI Category": "Moderately obese",
+        "Gender": "Male",
+        "Health risk": "Medium risk",
+        "HeightCm": 161,
+        "WeightKg": 85,
+        "bmi": 32.79
+    }, {
+        "BMI Category": "Normalweight",
+        "Gender": "Male",
+        "Health risk": "Low risk",
+        "HeightCm": 180,
+        "WeightKg": 77,
+        "bmi": 23.77
+    }, {
+        "BMI Category": "Normalweight",
+        "Gender": "Female",
+        "Health risk": "Low risk",
+        "HeightCm": 166,
+        "WeightKg": 62,
+        "bmi": 22.5
+    }, {
+        "BMI Category": "Moderately obese",
+        "Gender": "Female",
+        "Health risk": "Medium risk",
+        "HeightCm": 150,
+        "WeightKg": 70,
+        "bmi": 31.11
+    }, {
+        "BMI Category": "Overweight",
+        "Gender": "Female",
+        "Health risk": "Enhanced risk",
+        "HeightCm": 167,
+        "WeightKg": 82,
+        "bmi": 29.4
+    }]
+}
+
+--> the route to count the Overweight person I can make dynamic as well by making the GET request with params
+     http://127.0.0.1:5000/get-count
+     Sample Data:
+     {"OverweightCount":1}
+
+
+*** Deployed the code as a seprate backend service on heroku **
+
